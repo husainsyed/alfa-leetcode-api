@@ -190,6 +190,9 @@ app.get('/userProfile/:id', async (req, res) => {
   }
 });
 
+// New route for userProfile/:username/today
+app.get('/userProfile/:username/today', leetcode.userProfileToday);
+
 const handleRequest = async (res: Response, query: string, params: any) => {
   try {
     const data = await queryLeetCodeAPI(query, params);
